@@ -8,10 +8,12 @@ from rest_framework.response import Response
 from .models import Package, PaymentTransaction
 from .serializers import PackageSerializer, PaymentTransactionSerializer
 import stripe
+from rest_framework.permissions import IsAuthenticated
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
 
 class EmployerViewSet(viewsets.ModelViewSet):
     queryset = Employer.objects.all()
