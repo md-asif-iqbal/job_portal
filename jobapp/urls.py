@@ -1,23 +1,22 @@
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-from .views import PackageViewSet, PaymentViewSet, UserViewSet, EmployerViewSet, CompanyViewSet, JobViewSet, ResumeViewSet, ApplicationViewSet, MessageViewSet, AssessmentViewSet, JobMatchViewSet, TalentPoolViewSet, EventViewSet, AdminViewSet, AnalyticsViewSet
+from .views import PackageView, PaymentView, UserView, EmployerView, CompanyView, JobView, ResumeView, ApplicationView, MessageView, AssessmentView, JobMatchView, TalentPoolView, EventView, AdminView, AnalyticsView
 router = DefaultRouter()
-router.register(r'users', UserViewSet)
-router.register(r'employers', EmployerViewSet)
-router.register(r'companies', CompanyViewSet)
-router.register(r'jobs', JobViewSet)
-router.register(r'resumes', ResumeViewSet)
-router.register(r'applications', ApplicationViewSet)
-router.register(r'messages', MessageViewSet)
-router.register(r'assessments', AssessmentViewSet)
-router.register(r'job_matches', JobMatchViewSet)
-router.register(r'talent_pools', TalentPoolViewSet)
-router.register(r'events', EventViewSet)
-router.register(r'admins', AdminViewSet)
-router.register(r'analytics', AnalyticsViewSet)
-
-router.register(r'packages', PackageViewSet)
-router.register(r'payments', PaymentViewSet, basename='payment')
+router.register(r'users', UserView)
+router.register(r'employers', EmployerView)
+router.register(r'companies', CompanyView)
+router.register(r'jobs', JobView)
+router.register(r'resumes', ResumeView)
+router.register(r'applications', ApplicationView)
+router.register(r'messages', MessageView)
+router.register(r'assessments', AssessmentView)
+router.register(r'job_matches', JobMatchView)
+router.register(r'talent_pools', TalentPoolView)
+router.register(r'events', EventView)
+router.register(r'admins', AdminView)
+router.register(r'analytics', AnalyticsView)
+router.register(r'packages', PackageView)
+router.register(r'payments', PaymentView, basename='payment')
 
 urlpatterns = [
     path('', include(router.urls)),

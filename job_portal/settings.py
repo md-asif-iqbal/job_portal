@@ -14,41 +14,46 @@ STRIPE_TEST_SECRET_KEY = 'sk_test_51L1XB5H61fNE2hoYTiZMAM7NCaqXElYMe6BQHmL3YiBp4
 
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+   'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
     'jobapp',
     'rest_framework',
-    'axes',
-    'rest_framework.authtoken',
-    'dj_rest_auth',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'dj_rest_auth.registration',
+    # 'axes',
+    # 'rest_framework.authtoken',
+    # 'dj_rest_auth',
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    # 'dj_rest_auth.registration',
     # 'csp',
 ]
 
 MIDDLEWARE = [
-     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'axes.middleware.AxesMiddleware',
-    # 'csp.middleware.CSPMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
+    # 'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'django.middleware.common.CommonMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # 'django.contrib.messages.middleware.MessageMiddleware',
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'axes.middleware.AxesMiddleware',
+    # # 'csp.middleware.CSPMiddleware',
+    # 'allauth.account.middleware.AccountMiddleware',
 
 ]
 
-AXES_FAILURE_LIMIT = 5
-AXES_COOLOFF_TIME = timedelta(minutes=15)
+# AXES_FAILURE_LIMIT = 5
+# AXES_COOLOFF_TIME = timedelta(minutes=15)
 
 # CSP_DEFAULT_SRC = ("'self'",)
 # CSP_SCRIPT_SRC = ("'self'", 'https://asif.example.com')
@@ -82,9 +87,9 @@ DATABASES = {
 }
 
 AUTHENTICATION_BACKENDS = (
-   'axes.backends.AxesStandaloneBackend',  # Updated backend
-    'django.contrib.auth.backends.ModelBackend',  # Default backend
-    'allauth.account.auth_backends.AuthenticationBackend',  # allauth backend
+#    'axes.backends.AxesStandaloneBackend',  # Updated backend
+    # 'django.contrib.auth.backends.ModelBackend',  # Default backend
+    # 'allauth.account.auth_backends.AuthenticationBackend',  # allauth backend
 )
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -114,12 +119,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SITE_ID = 1  # Ensure this is set
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
-    ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'rest_framework.authentication.TokenAuthentication',
+    # ],
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [],
+    'DEFAULT_PERMISSION_CLASSES': [],
 }
 
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
