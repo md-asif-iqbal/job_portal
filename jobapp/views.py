@@ -124,6 +124,22 @@ class JobView(
 ):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
+    def get(self, request, pk=None):
+        if pk:
+            return self.retrieve(request, pk=pk)
+        return self.list(request)
+
+    def post(self, request):
+        return self.create(request)
+
+    def put(self, request, pk=None):
+        return self.update(request, pk=pk)
+
+    def patch(self, request, pk=None):
+        return self.partial_update(request, pk=pk)
+
+    def delete(self, request, pk=None):
+        return self.destroy(request, pk=pk)
 
 class ResumeView(EmployerView):
     queryset = Resume.objects.all()

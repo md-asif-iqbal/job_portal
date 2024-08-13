@@ -35,8 +35,9 @@ class Company(models.Model):
 
 class Job(models.Model):
     job_id = models.AutoField(primary_key=True)
+    # companyName = models.CharField(max_length=255)
     employer = models.ForeignKey(Employer, on_delete=models.CASCADE)
-    title = models.CharField(max_length=255)
+    title = models.TextField()
     description = models.TextField()
     requirements = models.TextField()
     benefits = models.TextField()
@@ -44,6 +45,7 @@ class Job(models.Model):
     posted_date = models.DateTimeField(auto_now_add=True)
     application_deadline = models.DateTimeField()
     status = models.CharField(max_length=50)
+    
 
 class Resume(models.Model):
     resume_id = models.AutoField(primary_key=True)
